@@ -1,0 +1,11 @@
+# Composer files
+composer.phar
+vendor/
+
+# Data
+data/logs/
+data/cache/
+data/sessions/
+data/tmp/
+temp/
+

@@ -2,6 +2,14 @@ Common Crawler Index
 =====================
 
 Common Crawler library based on `PHP` using `Zend Framework`
+
+
+
+### Download / Install
+~~~
+ composer require vrkansagara/common-crawl
+~~~
+
 #### [ TODO ]
 
 -[] Implement client https://github.com/ikreymer/cc-index-client

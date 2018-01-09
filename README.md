@@ -1,7 +1,8 @@
 Common Crawler Index
 =====================
 
-####[ TODO ]
+Common Crawler library based on `PHP` using `Zend Framework`
+#### [ TODO ]
 
 -[] Implement client https://github.com/ikreymer/cc-index-client
 

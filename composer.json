@@ -11,6 +11,6 @@
   ],
   "require": {
     "php": ">=5.6",
-    "zendframework/zend-http": "^2.4"
+    "zendframework/zend-http": "2.*"
   }
 }

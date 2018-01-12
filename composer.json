@@ -1,7 +1,7 @@
 {
   "name": "vrkansagara/common-crawl",
   "description": "Common Crawler",
-  "minimum-stability": "stable",
+  "minimum-stability": "dev",
   "license": "BSD 3-Clause License",
   "authors": [
     {

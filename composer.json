@@ -1,14 +1,31 @@
 {
-  "name": "vrkansagara/common-crawl",
+  "name": "vrkansagara/common-crawler",
+  "keywords": [
+    "common",
+    "crawler",
+    "index"
+  ],
+  "type": "library",
   "description": "Common Crawler",
   "minimum-stability": "stable",
+  "homepage": "https://vrkansagara.in",
   "license": "BSD 3-Clause License",
   "authors": [
     {
       "name": "Vallabh Kansagara",
-      "email": "vrkansagara@gmail.com"
+      "email": "vrkansagara@gmail.com",
+      "homepage": "https://vrkansagara.in",
+      "role": "maintainer"
     }
   ],
+  "autoload": {
+    "psr-0": {
+      "CommonCrawler": "src/"
+    },
+    "classmap": [
+      "./"
+    ]
+  },
   "require": {
     "php": ">=5.6",
     "zendframework/zend-http": "2.*"

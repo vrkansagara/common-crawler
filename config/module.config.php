@@ -1,12 +1,12 @@
 <?php
 return array(
-    'CommonCrawl' => array(
+    'CommonCrawler' => array(
         'options' => array(
             'index_collections' => array(
-                'json' => 'http://index.commoncrawl.org/collinfo.json',
+                'json' => 'http://index.CommonCrawler.org/collinfo.json',
                 'url' => array(
-                    'home' => 'http://index.commoncrawl.org',
-                    'amazon' => 'https://commoncrawl.s3.amazonaws.com/cc-index/collections/index.html',
+                    'home' => 'http://index.CommonCrawler.org',
+                    'amazon' => 'https://CommonCrawler.s3.amazonaws.com/cc-index/collections/index.html',
                 ),
             ),
 
@@ -27,15 +27,15 @@ return array(
     'controllers' => array(
         'invokables' => array(),
         'factories' => array(
-            'CommonCrawl\Controller\Index' => 'CommonCrawl\Factory\IndexFactory',
-            'CommonCrawl\Console\Index' => 'CommonCrawl\Factory\Console\IndexFactory',
+            'CommonCrawler\Controller\Index' => 'CommonCrawler\Factory\IndexFactory',
+            'CommonCrawler\Console\Index' => 'CommonCrawler\Factory\Console\IndexFactory',
         ),
     ),
     'service_manager' => array(
         'factories' => array(
-            //            'CommonCrawl\Mapper\IndexMapperInterface' => 'CommonCrawl\Factory\ZendDbSqliteMapperFactory',
-            'CommonCrawl\Service\IndexServiceInterface' => 'CommonCrawl\Factory\IndexServiceFactory',
-            'CommonCrawl\Mapper\IndexMapperInterface' => 'CommonCrawl\Factory\ZendDbSqlMapperFactory',
+            //            'CommonCrawler\Mapper\IndexMapperInterface' => 'CommonCrawler\Factory\ZendDbSqliteMapperFactory',
+            'CommonCrawler\Service\IndexServiceInterface' => 'CommonCrawler\Factory\IndexServiceFactory',
+            'CommonCrawler\Mapper\IndexMapperInterface' => 'CommonCrawler\Factory\ZendDbSqlMapperFactory',
             'Zend\Db\Adapter\Adapter' => 'Zend\Db\Adapter\AdapterServiceFactory',
         ),
 
@@ -43,17 +43,16 @@ return array(
     ),
     'router' => array(
         'routes' => array(
-            'commoncrawl' => array(
+            'CommonCrawler' => array(
                 'type' => 'Segment',
                 'options' => array(
-                    'route' => '/commoncrawl[/action/:action][/id/:id][/index/:index]',
+                    'route' => '/CommonCrawler[/action/:action][/id/:id][/index/:index]',
                     'defaults' => array(
-                        '__NAMESPACE__' => 'CommonCrawl\Controller',
+                        '__NAMESPACE__' => 'CommonCrawler\Controller',
                         'controller' => 'Index',
                         'action' => 'index',
                     ),
                     'constraints' => array(
-//                        'controller' => '[a-zA-Z][a-zA-Z0-9_-]*',
                         'action' => '[a-zA-Z][a-zA-Z0-9_-]*',
                     ),
                 ),
@@ -65,11 +64,11 @@ return array(
     'console' => array(
         'router' => array(
             'routes' => array(
-                'commoncrawl-ping' => array(
+                'CommonCrawler-ping' => array(
                     'options' => array(
-                        'route' => 'commoncrawl [--ping|-p] [--list|-l] [--insert|-i] [--verbose|-v] [--flush|-f] [--active|-a] [--inactive|-in] [--active-all|-al] [--inactive-all|-inl] [INDEXID] ',
+                        'route' => 'CommonCrawler [--ping|-p] [--list|-l] [--insert|-i] [--verbose|-v] [--flush|-f] [--active|-a] [--inactive|-in] [--active-all|-al] [--inactive-all|-inl] [INDEXID] ',
                         'defaults' => array(
-                            'controller' => 'CommonCrawl\Console\Index',
+                            'controller' => 'CommonCrawler\Console\Index',
                             'action' => 'index'
                         )
                     )

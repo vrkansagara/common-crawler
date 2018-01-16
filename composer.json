@@ -3,11 +3,13 @@
   "keywords": [
     "common",
     "crawler",
-    "index"
+    "index",
+    "php",
+    "zend"
   ],
   "type": "library",
   "description": "Common Crawler",
-  "minimum-stability": "stable",
+  "minimum-stability": "dev",
   "homepage": "https://vrkansagara.in",
   "license": "BSD 3-Clause License",
   "authors": [
@@ -28,6 +30,12 @@
   },
   "require": {
     "php": ">=5.6",
-    "zendframework/zend-http": "2.*"
+    "zendframework/zendframework": "2.*"
+  },
+  "repositories": {
+    "packagist": {
+      "url": "https://packagist.org",
+      "type": "composer"
+    }
   }
 }

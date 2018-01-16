@@ -10,3 +10,10 @@ data/tmp/
 temp/
 
 /.idea/
+.vimproject
+.*.swp
+test/log/
+composer.lock
+.buildpath
+.project
+.settings

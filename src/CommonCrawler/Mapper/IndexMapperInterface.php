@@ -1,7 +1,7 @@
 <?php
 
 
-namespace CommonCrawl\Mapper;
+namespace CommonCrawler\Mapper;
 
 
 interface IndexMapperInterface

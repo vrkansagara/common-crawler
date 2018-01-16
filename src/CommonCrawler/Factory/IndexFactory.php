@@ -1,9 +1,9 @@
 <?php
 
-namespace CommonCrawl\Factory;
+namespace CommonCrawler\Factory;
 
 
-use CommonCrawl\Controller\IndexController;
+use CommonCrawler\Controller\IndexController;
 use Zend\ServiceManager\FactoryInterface;
 use Zend\ServiceManager\ServiceLocatorInterface;
 
@@ -13,7 +13,7 @@ class IndexFactory implements FactoryInterface
     public function createService(ServiceLocatorInterface $serviceLocator)
     {
         $realServiceLocator = $serviceLocator->getServiceLocator();
-        $indexService = $realServiceLocator->get('CommonCrawl\Service\IndexServiceInterface');
+        $indexService = $realServiceLocator->get('CommonCrawler\Service\IndexServiceInterface');
 
         return new IndexController($indexService);
     }

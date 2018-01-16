@@ -1,8 +1,8 @@
 <?php
 
-namespace CommonCrawl\Controller;
+namespace CommonCrawler\Controller;
 
-use CommonCrawl\Service\IndexServiceInterface;
+use CommonCrawler\Service\IndexServiceInterface;
 use Zend\Mvc\Controller\AbstractActionController;
 use Zend\View\Model\ViewModel;
 
@@ -26,7 +26,7 @@ class IndexController extends AbstractActionController
     {
         $this->indexService->flushAllIndex();
         $this->flashMessenger()->addSuccessMessage('All indexes are removed.');
-        return $this->redirect()->toRoute('commoncrawl');
+        return $this->redirect()->toRoute('CommonCrawler');
 
     }
 
@@ -34,7 +34,7 @@ class IndexController extends AbstractActionController
     {
         $this->indexService->importIndexFromServer();
         $this->flashMessenger()->addSuccessMessage('All indexes are imported.');
-        return $this->redirect()->toRoute('commoncrawl');
+        return $this->redirect()->toRoute('CommonCrawler');
     }
 
     public function showAction()

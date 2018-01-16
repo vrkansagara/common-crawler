@@ -1,7 +1,7 @@
 <?php
 
 
-namespace CommonCrawl\Model;
+namespace CommonCrawler\Model;
 
 
 class Index implements IndexInterface

@@ -1,9 +1,9 @@
 <?php
 
-namespace CommonCrawl\Service;
+namespace CommonCrawler\Service;
 
-use CommonCrawl\Mapper\IndexMapperInterface;
-use CommonCrawl\Model\Index;
+use CommonCrawler\Mapper\IndexMapperInterface;
+use CommonCrawler\Model\Index;
 use Zend\Http\Client;
 
 class IndexService implements IndexServiceInterface

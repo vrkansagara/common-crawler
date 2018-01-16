@@ -1,8 +1,8 @@
 <?php
 
-namespace CommonCrawl\Console;
+namespace CommonCrawler\Console;
 
-use CommonCrawl\Service\IndexServiceInterface;
+use CommonCrawler\Service\IndexServiceInterface;
 use Zend\Console\ColorInterface as Color;
 use Zend\Console\Request as ConsoleRequest;
 use Zend\Mvc\Controller\AbstractActionController;

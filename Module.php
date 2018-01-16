@@ -1,13 +1,11 @@
 <?php
 
-namespace CommonCrawl;
+namespace CommonCrawler;
 
 use Zend\Console\Adapter\AdapterInterface;
-use Zend\EventManager\StaticEventManager;
 use Zend\ModuleManager\Feature\AutoloaderProviderInterface;
 use Zend\ModuleManager\Feature\ConfigProviderInterface;
 use Zend\ModuleManager\Feature\ConsoleUsageProviderInterface;
-use Zend\ModuleManager\ModuleManager;
 
 
 class Module implements AutoloaderProviderInterface, ConfigProviderInterface, ConsoleUsageProviderInterface

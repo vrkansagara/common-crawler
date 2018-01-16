@@ -1,9 +1,9 @@
 <?php
 
-namespace CommonCrawl\Factory;
+namespace CommonCrawler\Factory;
 
-use CommonCrawl\Mapper\ZendDbSqliteMapper;
-use CommonCrawl\Model\Index;
+use CommonCrawler\Mapper\ZendDbSqliteMapper;
+use CommonCrawler\Model\Index;
 use Zend\ServiceManager\FactoryInterface;
 use Zend\ServiceManager\ServiceLocatorInterface;
 use Zend\Stdlib\Hydrator\ClassMethods;

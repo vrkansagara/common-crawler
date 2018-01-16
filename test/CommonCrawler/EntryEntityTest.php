@@ -1,6 +1,6 @@
 <?php
 
-namespace CommonCrawl;
+namespace CommonCrawler;
 
 use PHPUnit_Framework_TestCase as TestCase;
 

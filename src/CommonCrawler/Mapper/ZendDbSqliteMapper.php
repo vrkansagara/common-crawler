@@ -1,8 +1,8 @@
 <?php
 
-namespace CommonCrawl\Mapper;
+namespace CommonCrawler\Mapper;
 
-use CommonCrawl\Model\IndexInterface;
+use CommonCrawler\Model\IndexInterface;
 use Zend\Db\Adapter\AdapterInterface;
 use Zend\Db\Adapter\Driver\ResultInterface;
 use Zend\Db\ResultSet\HydratingResultSet;

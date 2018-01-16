@@ -1,9 +1,9 @@
 <?php
 
-namespace CommonCrawl\Service;
+namespace CommonCrawler\Service;
 
 
-use CommonCrawl\Model\Index;
+use CommonCrawler\Model\Index;
 
 interface IndexServiceInterface
 {

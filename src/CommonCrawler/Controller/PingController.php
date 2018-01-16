@@ -1,6 +1,6 @@
 <?php
 
-namespace CommonCrawl;
+namespace CommonCrawler;
 
 use Zend\Mvc\Controller\AbstractActionController;
 

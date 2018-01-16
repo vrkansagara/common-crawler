@@ -1,0 +1,44 @@
+<div class="container">
+    <div class="row">
+        <h1>Common Crawl Index List</h1>
+        <h5><a href="<?php echo $this->url('commoncrawl', array('action' => 'deleteAll')) ?>">Flush All Index</a></h5>
+        <h5><a href="<?php echo $this->url('commoncrawl', array('action' => 'import')) ?>">Import</a></h5>
+        <table class="table table-striped">
+            <thead>
+            <tr>
+                <th>#</th>
+                <th>Id</th>
+                <th>Name</th>
+                <th>Timegate</th>
+                <th>CDX Api</th>
+                <th>Status</th>
+            </tr>
+            </thead>
+            <tbody>
+            <?php if (count($this->indexes)) :
+                foreach ($this->indexes as $key => $index): ?>
+                    <tr>
+                        <td scope="row"><?= ++$key ?></td>
+                        <td><?= $index->getIndex() ?></td>
+                        <td><?= $index->getName() ?></td>
+                        <td>
+                            <a href="<?= $index->getTimegate() ?>"><?= $index->getTimegate() ?></a>
+                        </td>
+                        <td>
+                            <a href="<?= $index->getCdxApi() ?>"><?= $index->getCdxApi() ?></a>
+                        </td>
+                        <td>
+                            <?= $index->getStatus() ?>
+                        </td>
+                    </tr>
+                <?php endforeach; ?>
+            <?php else: ?>
+                <tr>
+                    <td scope="row"> No Result found.</td>
+                </tr>
+
+            <?php endif; ?>
+            </tbody>
+        </table>
+    </div>
+</div>

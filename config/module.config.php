@@ -43,10 +43,10 @@ return array(
     ),
     'router' => array(
         'routes' => array(
-            'CommonCrawler' => array(
+            'commoncrawler' => array(
                 'type' => 'Segment',
                 'options' => array(
-                    'route' => '/CommonCrawler[/action/:action][/id/:id][/index/:index]',
+                    'route' => '/commoncrawler[/action/:action][/id/:id][/index/:index]',
                     'defaults' => array(
                         '__NAMESPACE__' => 'CommonCrawler\Controller',
                         'controller' => 'Index',
@@ -66,7 +66,7 @@ return array(
             'routes' => array(
                 'CommonCrawler-ping' => array(
                     'options' => array(
-                        'route' => 'CommonCrawler [--ping|-p] [--list|-l] [--insert|-i] [--verbose|-v] [--flush|-f] [--active|-a] [--inactive|-in] [--active-all|-al] [--inactive-all|-inl] [INDEXID] ',
+                        'route' => 'commoncrawler [--ping|-p] [--list|-l] [--insert|-i] [--verbose|-v] [--flush|-f] [--active|-a] [--inactive|-in] [--active-all|-al] [--inactive-all|-inl] [INDEXID] ',
                         'defaults' => array(
                             'controller' => 'CommonCrawler\Console\Index',
                             'action' => 'index'

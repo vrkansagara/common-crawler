@@ -64,7 +64,7 @@ return array(
     'console' => array(
         'router' => array(
             'routes' => array(
-                'commoncrawler-ping' => array(
+                'commoncrawler' => array(
                     'options' => array(
                         'route' => 'commoncrawler [--ping|-p] [--list|-l] [--insert|-i] [--verbose|-v] [--flush|-f] [--active|-a] [--inactive|-in] [--active-all|-al] [--inactive-all|-inl] [INDEXID] ',
                         'defaults' => array(

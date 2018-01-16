@@ -26,7 +26,7 @@ class IndexController extends AbstractActionController
     {
         $this->indexService->flushAllIndex();
         $this->flashMessenger()->addSuccessMessage('All indexes are removed.');
-        return $this->redirect()->toRoute('CommonCrawler');
+        return $this->redirect()->toRoute('commoncrawler');
 
     }
 
@@ -34,7 +34,7 @@ class IndexController extends AbstractActionController
     {
         $this->indexService->importIndexFromServer();
         $this->flashMessenger()->addSuccessMessage('All indexes are imported.');
-        return $this->redirect()->toRoute('CommonCrawler');
+        return $this->redirect()->toRoute('commoncrawler');
     }
 
     public function showAction()

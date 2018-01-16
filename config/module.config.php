@@ -3,10 +3,10 @@ return array(
     'CommonCrawler' => array(
         'options' => array(
             'index_collections' => array(
-                'json' => 'http://index.CommonCrawler.org/collinfo.json',
+                'json' => 'http://index.commoncrawl.org/collinfo.json',
                 'url' => array(
-                    'home' => 'http://index.CommonCrawler.org',
-                    'amazon' => 'https://CommonCrawler.s3.amazonaws.com/cc-index/collections/index.html',
+                    'home' => 'http://index.commoncrawl.org',
+                    'amazon' => 'https://commoncrawl.s3.amazonaws.com/cc-index/collections/index.html',
                 ),
             ),
 
@@ -64,7 +64,7 @@ return array(
     'console' => array(
         'router' => array(
             'routes' => array(
-                'CommonCrawler-ping' => array(
+                'commoncrawler-ping' => array(
                     'options' => array(
                         'route' => 'commoncrawler [--ping|-p] [--list|-l] [--insert|-i] [--verbose|-v] [--flush|-f] [--active|-a] [--inactive|-in] [--active-all|-al] [--inactive-all|-inl] [INDEXID] ',
                         'defaults' => array(

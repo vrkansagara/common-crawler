@@ -33,6 +33,7 @@ return array(
     ),
     'service_manager' => array(
         'factories' => array(
+            //            'CommonCrawl\Mapper\IndexMapperInterface' => 'CommonCrawl\Factory\ZendDbSqliteMapperFactory',
             'CommonCrawl\Service\IndexServiceInterface' => 'CommonCrawl\Factory\IndexServiceFactory',
             'CommonCrawl\Mapper\IndexMapperInterface' => 'CommonCrawl\Factory\ZendDbSqlMapperFactory',
             'Zend\Db\Adapter\Adapter' => 'Zend\Db\Adapter\AdapterServiceFactory',

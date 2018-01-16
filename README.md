@@ -17,21 +17,21 @@ Common Crawler library based on `PHP` using `Zend Framework`
 
 #### [ Feature - Console]
 
--[] Insert index list
+-[x] Insert index list
 
--[] Remove all index
+-[x] Remove all index
 
--[] Active /Inactive  all
+-[x] Active /Inactive  all
 
--[] Active /Inactive
+-[x] Active /Inactive
 
 
 
 #### [ Feature - Web]
 
--[] Insert index list
+-[x] Insert index list
 
--[] Remove all index
+-[x] Remove all index
 
 -[] Active /Inactive  all
 
@@ -40,9 +40,9 @@ Common Crawler library based on `PHP` using `Zend Framework`
 
 #### [ Multiple Database Support]
 
--[] Mysql
+-[x] Mysql
 
--[] Sqlite
+-[x] Sqlite
 
 -[] MongoDB
 

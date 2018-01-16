@@ -3,6 +3,13 @@ Common Crawler Index
 
 Common Crawler library based on `PHP` using `Zend Framework`
 
+#### How to run from web !
+
+``` <<project url>>/commoncrawler```
+
+#### How to run from console !
+
+```  php public/index.php commooncrawler```
 
 
 ### Download / Install

@@ -3,10 +3,10 @@ return array(
     'CommonCrawler' => array(
         'options' => array(
             'index_collections' => array(
-                'json' => 'http://index.CommonCrawler.org/collinfo.json',
+                'json' => 'http://index.commoncrawl.org/collinfo.json',
                 'url' => array(
-                    'home' => 'http://index.CommonCrawler.org',
-                    'amazon' => 'https://CommonCrawler.s3.amazonaws.com/cc-index/collections/index.html',
+                    'home' => 'http://index.commoncrawl.org',
+                    'amazon' => 'https://commoncrawl.s3.amazonaws.com/cc-index/collections/index.html',
                 ),
             ),
 
@@ -43,10 +43,10 @@ return array(
     ),
     'router' => array(
         'routes' => array(
-            'CommonCrawler' => array(
+            'commoncrawler' => array(
                 'type' => 'Segment',
                 'options' => array(
-                    'route' => '/CommonCrawler[/action/:action][/id/:id][/index/:index]',
+                    'route' => '/commoncrawler[/action/:action][/id/:id][/index/:index]',
                     'defaults' => array(
                         '__NAMESPACE__' => 'CommonCrawler\Controller',
                         'controller' => 'Index',
@@ -64,9 +64,9 @@ return array(
     'console' => array(
         'router' => array(
             'routes' => array(
-                'CommonCrawler-ping' => array(
+                'commoncrawler-ping' => array(
                     'options' => array(
-                        'route' => 'CommonCrawler [--ping|-p] [--list|-l] [--insert|-i] [--verbose|-v] [--flush|-f] [--active|-a] [--inactive|-in] [--active-all|-al] [--inactive-all|-inl] [INDEXID] ',
+                        'route' => 'commoncrawler [--ping|-p] [--list|-l] [--insert|-i] [--verbose|-v] [--flush|-f] [--active|-a] [--inactive|-in] [--active-all|-al] [--inactive-all|-inl] [INDEXID] ',
                         'defaults' => array(
                             'controller' => 'CommonCrawler\Console\Index',
                             'action' => 'index'

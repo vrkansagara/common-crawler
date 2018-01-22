@@ -18,21 +18,20 @@ Common Crawler library based on `PHP` using `Zend Framework`
 ~~~
 
 
-###SQL
+### SQL
 
 ~~~sql
-create table common_index
-(
-	id int auto_increment
-		primary key,
-	`index` varchar(25) not null,
-	name varchar(20) not null,
-	timegate varchar(50) not null,
-	cdx_api varchar(55) not null,
-	status tinyint(1) default '0' not null
-)
-engine=InnoDB
-;
+CREATE TABLE `common_index` (
+  `id` int(11) NOT NULL,
+  `cindex` varchar(25) NOT NULL,
+  `name` varchar(20) NOT NULL,
+  `timegate` varchar(50) NOT NULL,
+  `cdx_api` varchar(55) NOT NULL,
+  `status` tinyint(1) NOT NULL DEFAULT '0',
+  `created_at` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
+  `updated_at` timestamp NOT NULL DEFAULT '0000-00-00 00:00:00' ON UPDATE CURRENT_TIMESTAMP
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
 ~~~
 
 ###SQLite

@@ -52,7 +52,7 @@ class ZendDbSqlMapper implements IndexMapperInterface
     {
         $sql = new Sql($this->dbAdapter);
         $select = $sql->select('common_index');
-        $select->where(array("index" => $id));
+        $select->where(array("cindex" => $id));
 
         $stmt = $sql->prepareStatementForSqlObject($select);
         $result = $stmt->execute();
@@ -68,7 +68,50 @@ class ZendDbSqlMapper implements IndexMapperInterface
     {
         $sql = new Sql($this->dbAdapter);
         $select = $sql->select('common_index');
+        $select->order('id');
 
+        $stmt = $sql->prepareStatementForSqlObject($select);
+        $result = $stmt->execute();
+
+        if ($result instanceof ResultInterface && $result->isQueryResult()) {
+
+            $resultSet = new HydratingResultSet($this->hydrator, $this->indexPrototype);
+            return $resultSet->initialize($result);
+        }
+
+        die("no data");
+    }
+
+    public function findAllActive()
+    {
+        $sql = new Sql($this->dbAdapter);
+        $select = $sql->select('common_index');
+        $select->where(
+            array(
+                'status' => (int)1
+            )
+        );
+
+        $stmt = $sql->prepareStatementForSqlObject($select);
+        $result = $stmt->execute();
+
+        if ($result instanceof ResultInterface && $result->isQueryResult()) {
+            $resultSet = new HydratingResultSet($this->hydrator, $this->indexPrototype);
+            return $resultSet->initialize($result);
+        }
+
+        die("no data");
+    }
+
+    public function findAllInactive()
+    {
+        $sql = new Sql($this->dbAdapter);
+        $select = $sql->select('common_index');
+        $select->where(
+            array(
+                'status' => (int)0
+            )
+        );
         $stmt = $sql->prepareStatementForSqlObject($select);
         $result = $stmt->execute();
 
@@ -122,8 +165,7 @@ class ZendDbSqlMapper implements IndexMapperInterface
         $rows = array();
         foreach ($response as $key => $row) {
             if (!$this->isExists($row->id)) {
-                $rowData['index'] = $row->id;
-                $this->active($row->id);
+                $rowData['cindex'] = $row->id;
                 $rowData['name'] = $row->name;
                 $rowData['timegate'] = $row->timegate;
                 $rowData['cdx_api'] = $row->{'cdx-api'};
@@ -131,9 +173,11 @@ class ZendDbSqlMapper implements IndexMapperInterface
                 $insert->values($rowData);
                 $stmt = $sql->prepareStatementForSqlObject($insert);
                 $result = $stmt->execute();
-                $this->active($row->id);
             } else {
-                $this->active($row->id);
+                /**
+                 * @todo
+                 * If record exist then do nothing. just skip this portation.
+                 */
             }
         }
     }
@@ -145,7 +189,7 @@ class ZendDbSqlMapper implements IndexMapperInterface
     public function isExists($id)
     {
         $sql = new Sql($this->dbAdapter);
-        $select = $sql->select('common_index')->where(array('index' => $id));
+        $select = $sql->select('common_index')->where(array('cindex' => $id));
         $stmt = $sql->prepareStatementForSqlObject($select);
         return $stmt->execute()->count();
     }
@@ -166,7 +210,7 @@ class ZendDbSqlMapper implements IndexMapperInterface
         );
         $update->where(
             array(
-                'index' => (string)$id
+                'cindex' => (string)$id
             )
         );
 
@@ -195,7 +239,7 @@ class ZendDbSqlMapper implements IndexMapperInterface
         );
         $update->where(
             array(
-                'index' => (string)$id
+                'cindex' => (string)$id
             )
         );
 

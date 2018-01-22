@@ -10,6 +10,10 @@ interface IndexMapperInterface
 
     public function findAll();
 
+    public function findAllActive();
+
+    public function findAllInactive();
+
     public function insert(array $indexData);
 
     public function delete($id);

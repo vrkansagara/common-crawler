@@ -46,7 +46,7 @@ return array(
             'commoncrawler' => array(
                 'type' => 'Segment',
                 'options' => array(
-                    'route' => '/commoncrawler[/action/:action][/id/:id][/index/:index]',
+                    'route' => '/commoncrawler[/action/:action][/id/:id][/index/:index][/status/:status]',
                     'defaults' => array(
                         '__NAMESPACE__' => 'CommonCrawler\Controller',
                         'controller' => 'Index',
@@ -54,6 +54,7 @@ return array(
                     ),
                     'constraints' => array(
                         'action' => '[a-zA-Z][a-zA-Z0-9_-]*',
+                        'status' => '[0-1]',
                     ),
                 ),
                 'may_terminate' => true,

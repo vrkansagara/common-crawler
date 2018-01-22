@@ -26,6 +26,16 @@ class IndexService implements IndexServiceInterface
         return $this->indexMapper->findAll();
     }
 
+    public function findAllActiveIndexes()
+    {
+        return $this->indexMapper->findAllActive();
+    }
+
+    public function findAllInactiveIndexes()
+    {
+        return $this->indexMapper->findAllInactive();
+    }
+
     public function findIndex($id)
     {
         return $this->indexMapper->find($id);

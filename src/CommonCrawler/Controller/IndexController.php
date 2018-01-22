@@ -17,8 +17,20 @@ class IndexController extends AbstractActionController
 
     public function indexAction()
     {
+        $status = $this->params()->fromRoute('status', null);
+        switch ($status) {
+            case '0':
+                $indexes = $this->indexService->findAllInactiveIndexes();
+                break;
+            case '1':
+                $indexes = $this->indexService->findAllActiveIndexes();
+                break;
+            default:
+                $indexes = $this->indexService->findAllIndexes();
+                break;
+        }
         return new ViewModel(array(
-            'indexes' => $this->indexService->findAllIndexes()
+            'indexes' => $indexes
         ));
     }
 
@@ -50,5 +62,23 @@ class IndexController extends AbstractActionController
         $url = (string)$this->params()->fromRoute('url', '');
         $index = $this->indexService->findIndex($indexId);
         $this->indexService->getPageSize($index, $url);
+    }
+
+    public function activeIndexAction()
+    {
+        $indexId = $this->params()->fromRoute('id', null);
+        $this->indexService->activeIndex($indexId);
+        $this->flashMessenger()->addSuccessMessage('Index activated');
+        /**@todo redirect to backroute with filter value(s) */
+        return $this->redirect()->toRoute('commoncrawler');
+    }
+
+    public function inActiveIndexAction()
+    {
+        $indexId = $this->params()->fromRoute('id', null);
+        $this->indexService->inactiveIndex($indexId);
+        $this->flashMessenger()->addSuccessMessage('Index Inactivated');
+        /**@todo redirect to backroute with filter value(s) */
+        return $this->redirect()->toRoute('commoncrawler');
     }
 }

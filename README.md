@@ -17,56 +17,22 @@ Common Crawler library based on `PHP` using `Zend Framework`
  composer require vrkansagara/common-crawl
 ~~~
 
-#### [ TODO ]
-
--[] Implement client https://github.com/ikreymer/cc-index-client
-
-
-#### [ Feature - Console]
-
--[x] Insert index list
-
--[x] Remove all index
-
--[x] Active /Inactive  all
-
--[x] Active /Inactive
-
-
-
-#### [ Feature - Web]
-
--[x] Insert index list
-
--[x] Remove all index
-
--[] Active /Inactive  all
-
--[] Active /Inactive
-
-
-#### [ Multiple Database Support]
-
--[x] Mysql
-
--[x] Sqlite
-
--[] MongoDB
-
--[] ElasticSearch
-
 
 ###SQL
 
 ~~~sql
-CREATE TABLE `common_index` (
-  `id` int(11) NOT NULL AUTO_INCREMENT,
-  `index` varchar(25) NOT NULL,
-  `name` varchar(20) NOT NULL,
-  `timegate` varchar(50) NOT NULL,
-  `cdx_api` varchar(55) NOT NULL,
-  PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=124 DEFAULT CHARSET=utf8
+create table common_index
+(
+	id int auto_increment
+		primary key,
+	`index` varchar(25) not null,
+	name varchar(20) not null,
+	timegate varchar(50) not null,
+	cdx_api varchar(55) not null,
+	status tinyint(1) default '0' not null
+)
+engine=InnoDB
+;
 ~~~
 
 ###SQLite
@@ -88,3 +54,4 @@ follow the master
 walk with the master 
 see through the master 
 become the master.
+

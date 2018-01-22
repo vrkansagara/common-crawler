@@ -1,44 +1,71 @@
 <div class="container">
-    <div class="row">
-        <h1>Common Crawl Index List</h1>
-        <h5><a href="<?php echo $this->url('commoncrawler', array('action' => 'deleteAll')) ?>">Flush All Index</a></h5>
-        <h5><a href="<?php echo $this->url('commoncrawler', array('action' => 'import')) ?>">Import</a></h5>
-        <table class="table table-striped">
-            <thead>
-            <tr>
-                <th>#</th>
-                <th>Id</th>
-                <th>Name</th>
-                <th>Timegate</th>
-                <th>CDX Api</th>
-                <th>Status</th>
-            </tr>
-            </thead>
-            <tbody>
-            <?php if (count($this->indexes)) :
-                foreach ($this->indexes as $key => $index): ?>
-                    <tr>
-                        <td scope="row"><?= ++$key ?></td>
-                        <td><?= $index->getIndex() ?></td>
-                        <td><?= $index->getName() ?></td>
-                        <td>
-                            <a href="<?= $index->getTimegate() ?>"><?= $index->getTimegate() ?></a>
-                        </td>
-                        <td>
-                            <a href="<?= $index->getCdxApi() ?>"><?= $index->getCdxApi() ?></a>
-                        </td>
-                        <td>
-                            <?= $index->getStatus() ?>
-                        </td>
-                    </tr>
-                <?php endforeach; ?>
-            <?php else: ?>
-                <tr>
-                    <td scope="row"> No Result found.</td>
-                </tr>
-
-            <?php endif; ?>
-            </tbody>
-        </table>
+    <h1>Common Crawl Index List</h1>
+    <div class="row justify-content-start"
+    ">
+    <div class="col-2">
+        <a href="<?php echo $this->url('commoncrawler', array('action' => 'deleteAll')) ?>"
+           class="btn btn-sm btn-danger" role="button">Flush All Index</a>
     </div>
+    <div class="col-2">
+        <a href="<?php echo $this->url('commoncrawler', array('action' => 'import')) ?>" class="btn btn-sm btn-primary"
+           role="button">Import
+            Index</a>
+    </div>
+    <div class="col-2">
+        <a href="<?php echo $this->url('commoncrawler', array('action' => 'index', 'status' => 1)) ?>"
+           class="btn btn-sm btn-primary" role="button">Active Index List</a>
+    </div>
+    <div class="col-2">
+        <a href="<?php echo $this->url('commoncrawler', array('action' => 'index', 'status' => 0)) ?>"
+           class="btn btn-sm btn-danger" role="button">Inactive Index List</a>
+    </div>
+</div>
+<table class="table table-striped">
+    <thead>
+    <tr>
+        <th>#</th>
+        <th>Id</th>
+        <th>Name</th>
+        <th>Timegate</th>
+        <th>CDX Api</th>
+        <th>Status</th>
+    </tr>
+    </thead>
+    <tbody>
+    <?php if (count($this->indexes)) :
+        foreach ($this->indexes as $key => $index): ?>
+            <tr>
+                <td scope="row"><?= ++$key ?></td>
+                <td><?= $index->getCindex() ?></td>
+                <td><?= $index->getName() ?></td>
+                <td>
+                    <a href="<?= $index->getTimegate() ?>"><?= $index->getTimegate() ?></a>
+                </td>
+                <td>
+                    <a href="<?= $index->getCdxApi() ?>"><?= $index->getCdxApi() ?></a>
+                </td>
+                <td>
+                    <?= $index->getStatus() ?>
+                    <?php
+                    /**
+                     * @fixme
+                     * Only print active/inactive link while on status page only.
+                     */
+                    ?>
+                    <?php if ($index->getStatus() == 'Active'): ?>
+                        <a href="<?php echo $this->url('commoncrawler', array('action' => 'inActiveIndex', 'id' => $index->getCindex())) ?>">Inactive</a>
+                    <?php else: ?>
+                        <a href="<?php echo $this->url('commoncrawler', array('action' => 'activeIndex', 'id' => $index->getCindex())) ?>">Active</a>
+                    <?php endif; ?>
+                </td>
+            </tr>
+        <?php endforeach; ?>
+    <?php else: ?>
+        <tr>
+            <td scope="row"> No Result found.</td>
+        </tr>
+
+    <?php endif; ?>
+    </tbody>
+</table>
 </div>

@@ -6,7 +6,7 @@ namespace CommonCrawler\Model;
 
 interface IndexInterface
 {
-    public function getIndex();
+    public function getCindex();
 
     public function getName();
 

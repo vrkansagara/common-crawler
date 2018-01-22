@@ -9,6 +9,10 @@ interface IndexServiceInterface
 {
     public function findAllIndexes();
 
+    public function findAllActiveIndexes();
+
+    public function findAllInactiveIndexes();
+
     public function findIndex($id);
 
     public function insertIndex(array $values);

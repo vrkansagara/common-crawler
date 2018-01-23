@@ -33,7 +33,7 @@ return array(
     ),
     'service_manager' => array(
         'factories' => array(
-            //            'CommonCrawler\Mapper\IndexMapperInterface' => 'CommonCrawler\Factory\ZendDbSqliteMapperFactory',
+            //            'CommonCrawler\Mapper\IndexMapperInterface' => 'CommonCrawler\Factory\ZendDbSqliteMapperFactory',//Uncomment while you want to use db-engine as Sqlite.
             'CommonCrawler\Service\IndexServiceInterface' => 'CommonCrawler\Factory\IndexServiceFactory',
             'CommonCrawler\Mapper\IndexMapperInterface' => 'CommonCrawler\Factory\ZendDbSqlMapperFactory',
             'Zend\Db\Adapter\Adapter' => 'Zend\Db\Adapter\AdapterServiceFactory',

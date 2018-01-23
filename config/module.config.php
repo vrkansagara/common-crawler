@@ -28,7 +28,7 @@ return array(
         'invokables' => array(),
         'factories' => array(
             'CommonCrawler\Controller\Index' => 'CommonCrawler\Factory\IndexFactory',
-            'CommonCrawler\Console\Index' => 'CommonCrawler\Factory\Console\IndexFactory',
+            'CommonCrawler\Console\Index' => 'CommonCrawler\Factory\IndexFactory',
         ),
     ),
     'service_manager' => array(

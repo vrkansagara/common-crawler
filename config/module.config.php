@@ -17,7 +17,8 @@ return array(
                 'index' => 'common_index'
             ),
             'drop_table_if_exists' => true
-        )
+        ),
+        'pageSize' => 3
     ),
     'view_manager' => array(
         'template_path_stack' => array(
@@ -37,6 +38,7 @@ return array(
             'CommonCrawler\Service\IndexServiceInterface' => 'CommonCrawler\Factory\IndexServiceFactory',
             'CommonCrawler\Mapper\IndexMapperInterface' => 'CommonCrawler\Factory\ZendDbSqlMapperFactory',
             'Zend\Db\Adapter\Adapter' => 'Zend\Db\Adapter\AdapterServiceFactory',
+            'CommonCrawler\Controller\Index' => 'CommonCrawler\Controller\Index',
         ),
 
 

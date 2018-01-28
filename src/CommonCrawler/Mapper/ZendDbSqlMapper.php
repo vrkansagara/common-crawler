@@ -13,6 +13,7 @@ use Zend\Stdlib\Hydrator\HydratorInterface;
 
 class ZendDbSqlMapper implements IndexMapperInterface
 {
+    protected $tableName = 'common_index';
     /**
      * @var \Zend\Db\Adapter\AdapterInterface
      */
@@ -51,7 +52,7 @@ class ZendDbSqlMapper implements IndexMapperInterface
     public function find($id)
     {
         $sql = new Sql($this->dbAdapter);
-        $select = $sql->select('common_index');
+        $select = $sql->select($this->tableName);
         $select->where(array("cindex" => $id));
 
         $stmt = $sql->prepareStatementForSqlObject($select);
@@ -67,7 +68,7 @@ class ZendDbSqlMapper implements IndexMapperInterface
     public function findAll()
     {
         $sql = new Sql($this->dbAdapter);
-        $select = $sql->select('common_index');
+        $select = $sql->select($this->tableName);
         $select->order('id');
 
         $stmt = $sql->prepareStatementForSqlObject($select);
@@ -85,7 +86,7 @@ class ZendDbSqlMapper implements IndexMapperInterface
     public function findAllActive()
     {
         $sql = new Sql($this->dbAdapter);
-        $select = $sql->select('common_index');
+        $select = $sql->select($this->tableName);
         $select->where(
             array(
                 'status' => (int)1
@@ -106,7 +107,7 @@ class ZendDbSqlMapper implements IndexMapperInterface
     public function findAllInactive()
     {
         $sql = new Sql($this->dbAdapter);
-        $select = $sql->select('common_index');
+        $select = $sql->select($this->tableName);
         $select->where(
             array(
                 'status' => (int)0
@@ -299,6 +300,5 @@ class ZendDbSqlMapper implements IndexMapperInterface
         }
         return false;
     }
-
 
 }

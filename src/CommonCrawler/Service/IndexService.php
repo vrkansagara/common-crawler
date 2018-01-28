@@ -16,7 +16,7 @@ class IndexService implements IndexServiceInterface
      * IndexService constructor.
      * @param $indexMapper
      */
-    public function __construct(IndexMapperInterface $indexMapper)
+    public function __construct(IndexMapperInterface $indexMapper, array $configuration)
     {
         $this->indexMapper = $indexMapper;
     }
@@ -153,6 +153,5 @@ class IndexService implements IndexServiceInterface
 
         }
     }
-
 
 }

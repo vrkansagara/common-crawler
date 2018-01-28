@@ -12,6 +12,17 @@ use Zend\Stdlib\Hydrator\HydratorInterface;
 
 class ZendDbSqliteMapper implements IndexMapperInterface
 {
+    protected $tableName = 'common_index';
+
+    public function findAllActive()
+    {
+        // TODO: Implement findAllActive() method.
+    }
+
+    public function findAllInactive()
+    {
+        // TODO: Implement findAllInactive() method.
+    }
 
     /**
      * @var \Zend\Db\Adapter\AdapterInterface

@@ -34,5 +34,4 @@ interface IndexServiceInterface
     public function inactiveAllIndex();
 
     public function getPageSize(Index $index, $url, $output = 'json', $showNumPages = true);
-
 }

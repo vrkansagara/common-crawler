@@ -17,7 +17,8 @@ return array(
                 'index' => 'common_index'
             ),
             'drop_table_if_exists' => true
-        )
+        ),
+        'pageSize' => 3
     ),
     'view_manager' => array(
         'template_path_stack' => array(
@@ -28,15 +29,16 @@ return array(
         'invokables' => array(),
         'factories' => array(
             'CommonCrawler\Controller\Index' => 'CommonCrawler\Factory\IndexFactory',
-            'CommonCrawler\Console\Index' => 'CommonCrawler\Factory\Console\IndexFactory',
+            'CommonCrawler\Console\Index' => 'CommonCrawler\Factory\IndexFactory',
         ),
     ),
     'service_manager' => array(
         'factories' => array(
-            //            'CommonCrawler\Mapper\IndexMapperInterface' => 'CommonCrawler\Factory\ZendDbSqliteMapperFactory',
+            //            'CommonCrawler\Mapper\IndexMapperInterface' => 'CommonCrawler\Factory\ZendDbSqliteMapperFactory',//Uncomment while you want to use db-engine as Sqlite.
             'CommonCrawler\Service\IndexServiceInterface' => 'CommonCrawler\Factory\IndexServiceFactory',
             'CommonCrawler\Mapper\IndexMapperInterface' => 'CommonCrawler\Factory\ZendDbSqlMapperFactory',
             'Zend\Db\Adapter\Adapter' => 'Zend\Db\Adapter\AdapterServiceFactory',
+            'CommonCrawler\Controller\Index' => 'CommonCrawler\Controller\Index',
         ),
 
 

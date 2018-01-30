@@ -11,7 +11,7 @@
   "description": "Common Crawler",
   "minimum-stability": "dev",
   "homepage": "https://vrkansagara.in",
-  "license": "BSD 3-Clause",
+  "license": "BSD-3-Clause",
   "authors": [
     {
       "name": "Vallabh Kansagara",

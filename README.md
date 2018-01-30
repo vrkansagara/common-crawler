@@ -3,6 +3,13 @@ Common Crawler Index
 
 Common Crawler library based on `PHP` using `Zend Framework`
 
+#### How to run from web !
+
+``` <<project url>>/commoncrawler```
+
+#### How to run from console !
+
+```  php public/index.php commooncrawler```
 
 
 ### Download / Install
@@ -10,59 +17,27 @@ Common Crawler library based on `PHP` using `Zend Framework`
  composer require vrkansagara/common-crawl
 ~~~
 
-#### [ TODO ]
+### Demo
 
--[] Implement client https://github.com/ikreymer/cc-index-client
+`https://vrkansagara.in/commoncrawler`
 
-
-#### [ Feature - Console]
-
--[x] Insert index list
-
--[x] Remove all index
-
--[x] Active /Inactive  all
-
--[x] Active /Inactive
-
-
-
-#### [ Feature - Web]
-
--[x] Insert index list
-
--[x] Remove all index
-
--[] Active /Inactive  all
-
--[] Active /Inactive
-
-
-#### [ Multiple Database Support]
-
--[x] Mysql
-
--[x] Sqlite
-
--[] MongoDB
-
--[] ElasticSearch
-
-
-###SQL
+### SQL
 
 ~~~sql
 CREATE TABLE `common_index` (
-  `id` int(11) NOT NULL AUTO_INCREMENT,
-  `index` varchar(25) NOT NULL,
+  `id` int(11) NOT NULL,
+  `cindex` varchar(25) NOT NULL,
   `name` varchar(20) NOT NULL,
   `timegate` varchar(50) NOT NULL,
   `cdx_api` varchar(55) NOT NULL,
-  PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=124 DEFAULT CHARSET=utf8
+  `status` tinyint(1) NOT NULL DEFAULT '0',
+  `created_at` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
+  `updated_at` timestamp NOT NULL DEFAULT '0000-00-00 00:00:00' ON UPDATE CURRENT_TIMESTAMP
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
 ~~~
 
-###SQLite
+### SQLite
 ~~~sqlite
 CREATE TABLE common_index
 (
@@ -81,3 +56,4 @@ follow the master
 walk with the master 
 see through the master 
 become the master.
+

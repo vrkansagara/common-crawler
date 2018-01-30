@@ -6,7 +6,7 @@ namespace CommonCrawler\Model;
 
 class Index implements IndexInterface
 {
-    private $index;
+    private $cindex;
     private $name;
     private $timegate;
     private $cdx_api;
@@ -15,18 +15,19 @@ class Index implements IndexInterface
     /**
      * @return mixed
      */
-    public function getIndex()
+    public function getCindex()
     {
-        return $this->index;
+        return $this->cindex;
     }
 
     /**
-     * @param mixed $index
+     * @param mixed $cindex
      */
-    public function setIndex($index)
+    public function setCindex($cindex)
     {
-        $this->index = $index;
+        $this->cindex = $cindex;
     }
+
 
     /**
      * @return mixed

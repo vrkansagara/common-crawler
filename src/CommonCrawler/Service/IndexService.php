@@ -16,7 +16,7 @@ class IndexService implements IndexServiceInterface
      * IndexService constructor.
      * @param $indexMapper
      */
-    public function __construct(IndexMapperInterface $indexMapper)
+    public function __construct(IndexMapperInterface $indexMapper, array $configuration)
     {
         $this->indexMapper = $indexMapper;
     }
@@ -24,6 +24,16 @@ class IndexService implements IndexServiceInterface
     public function findAllIndexes()
     {
         return $this->indexMapper->findAll();
+    }
+
+    public function findAllActiveIndexes()
+    {
+        return $this->indexMapper->findAllActive();
+    }
+
+    public function findAllInactiveIndexes()
+    {
+        return $this->indexMapper->findAllInactive();
     }
 
     public function findIndex($id)
@@ -143,6 +153,5 @@ class IndexService implements IndexServiceInterface
 
         }
     }
-
 
 }

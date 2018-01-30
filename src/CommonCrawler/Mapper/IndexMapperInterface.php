@@ -33,4 +33,5 @@ interface IndexMapperInterface
     public function activeAll();
 
     public function inactivateAll();
+
 }

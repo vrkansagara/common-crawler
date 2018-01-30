@@ -29,6 +29,7 @@
         <th>Timegate</th>
         <th>CDX Api</th>
         <th>Status</th>
+        <th>Action</th>
     </tr>
     </thead>
     <tbody>
@@ -57,6 +58,12 @@
                     <?php else: ?>
                         <a href="<?php echo $this->url('commoncrawler', array('action' => 'activeIndex', 'id' => $index->getCindex())) ?>">Active</a>
                     <?php endif; ?>
+                </td>
+                <td>
+                    <a href="<?php echo $this->url('commoncrawler',
+                        array('action' => 'edit', 'id' => $index->getCindex())); ?>">Edit</a>
+                    <a href="<?php echo $this->url('commoncrawler',
+                        array('action' => 'delete', 'id' => $index->getCindex())); ?>">Delete</a>
                 </td>
             </tr>
         <?php endforeach; ?>

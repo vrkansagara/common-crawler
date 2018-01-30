@@ -2,6 +2,7 @@
 
 namespace CommonCrawler\Controller;
 
+use CommonCrawler\Form\IndexForm;
 use CommonCrawler\Service\IndexServiceInterface;
 use Zend\Mvc\Controller\AbstractActionController;
 use Zend\View\Model\ViewModel;
@@ -80,5 +81,50 @@ class IndexController extends AbstractActionController
         $this->flashMessenger()->addSuccessMessage('Index Inactivated');
         /**@todo redirect to backroute with filter value(s) */
         return $this->redirect()->toRoute('commoncrawler');
+    }
+
+    public function editAction()
+    {
+        $indexId = $this->params()->fromRoute('id', null);
+        if (!$indexId) {
+            $this->flashMessenger()->addErrorMessage('Provide Index id.');
+            return $this->redirect()->toRoute('commoncrawler', array(
+                'action' => 'index'
+            ));
+        }
+
+        try {
+            $index = $this->indexService->findIndex($indexId);
+        } catch (\Exception $ex) {
+            return $this->redirect()->toRoute('commoncrawler', array(
+                'action' => 'index'
+            ));
+        }
+
+        $form = new IndexForm();
+        $form->bind($index);
+        $form->get('submit')->setAttribute('value', 'Update');
+
+//        $request = $this->getRequest();
+//        if ($request->isPost()) {
+//            $form->setInputFilter($index->getInputFilter());
+//            $form->setData($request->getPost());
+//
+//            if ($form->isValid()) {
+//                $this->getTodoTable()->saveTodo($Todo);
+//
+//                // Redirect to list of Todos
+//                return $this->redirect()->toRoute('todo');
+//            }else{
+//                /**
+//                 * @todo invalid form show proper notification.
+//                 */
+//            }
+//        }
+
+        return array(
+            'id' => $indexId,
+            'form' => $form,
+        );
     }
 }

@@ -12,6 +12,8 @@ class IndexServiceFactory implements FactoryInterface
 
     public function createService(ServiceLocatorInterface $serviceLocator)
     {
-        return new IndexService($serviceLocator->get('CommonCrawler\Mapper\IndexMapperInterface'));
+        $indexMpper = $serviceLocator->get('CommonCrawler\Mapper\IndexMapperInterface');
+        $config = $serviceLocator->get('config');
+        return new IndexService($indexMpper, $config);
     }
 }

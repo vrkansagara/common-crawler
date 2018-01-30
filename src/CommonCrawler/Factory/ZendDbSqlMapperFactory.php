@@ -17,7 +17,7 @@ class ZendDbSqlMapperFactory implements FactoryInterface
             $serviceLocator->get('Zend\Db\Adapter\Adapter'),
             new ClassMethods(),
             new Index(),
-            $serviceLocator->get('Config')
+            $serviceLocator->get('config')
         );
     }
 }

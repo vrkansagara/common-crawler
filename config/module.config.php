@@ -48,7 +48,7 @@ return array(
             'commoncrawler' => array(
                 'type' => 'Segment',
                 'options' => array(
-                    'route' => '/commoncrawler[/action/:action][/id/:id][/index/:index][/status/:status]',
+                    'route' => '/commoncrawler[/:action][/:id][/:index][/:status]',
                     'defaults' => array(
                         '__NAMESPACE__' => 'CommonCrawler\Controller',
                         'controller' => 'Index',

@@ -39,7 +39,7 @@ class IndexController extends AbstractActionController
     {
         $this->indexService->flushAllIndex();
         $this->flashMessenger()->addSuccessMessage('All indexes are removed.');
-        return $this->redirect()->toRoute('commoncrawler');
+        return $this->redirect()->toRoute('commoncrawler.index');
 
     }
 
@@ -47,7 +47,7 @@ class IndexController extends AbstractActionController
     {
         $this->indexService->importIndexFromServer();
         $this->flashMessenger()->addSuccessMessage('All indexes are imported.');
-        return $this->redirect()->toRoute('commoncrawler');
+        return $this->redirect()->toRoute('commoncrawler.index');
     }
 
     public function showAction()
@@ -71,7 +71,7 @@ class IndexController extends AbstractActionController
         $this->indexService->activeIndex($indexId);
         $this->flashMessenger()->addSuccessMessage('Index activated');
         /**@todo redirect to backroute with filter value(s) */
-        return $this->redirect()->toRoute('commoncrawler');
+        return $this->redirect()->toRoute('commoncrawler.index');
     }
 
     public function inActiveIndexAction()
@@ -80,7 +80,7 @@ class IndexController extends AbstractActionController
         $this->indexService->inactiveIndex($indexId);
         $this->flashMessenger()->addSuccessMessage('Index Inactivated');
         /**@todo redirect to backroute with filter value(s) */
-        return $this->redirect()->toRoute('commoncrawler');
+        return $this->redirect()->toRoute('commoncrawler.index');
     }
 
     public function editAction()

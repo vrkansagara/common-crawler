@@ -1,19 +1,19 @@
 <?php
 
-namespace CommonCrawler\Factory;
+namespace CommonCrawler\Factory\Sql;
 
-use CommonCrawler\Mapper\ZendDbSqlMapper;
+use CommonCrawler\Mapper\Sql\IndexMapper;
 use CommonCrawler\Model\Index;
 use Zend\ServiceManager\FactoryInterface;
 use Zend\ServiceManager\ServiceLocatorInterface;
 use Zend\Stdlib\Hydrator\ClassMethods;
 
 
-class ZendDbSqlMapperFactory implements FactoryInterface
+class IndexMapperFactory implements FactoryInterface
 {
     public function createService(ServiceLocatorInterface $serviceLocator)
     {
-        return new ZendDbSqlMapper(
+        return new IndexMapper(
             $serviceLocator->get('Zend\Db\Adapter\Adapter'),
             new ClassMethods(),
             new Index(),

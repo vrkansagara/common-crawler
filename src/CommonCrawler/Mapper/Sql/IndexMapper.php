@@ -1,17 +1,18 @@
 <?php
 
-namespace CommonCrawler\Mapper;
+namespace CommonCrawler\Mapper\Sql;
 
+use CommonCrawler\Mapper\IndexMapperInterface;
 use CommonCrawler\Model\IndexInterface;
 use Zend\Db\Adapter\AdapterInterface;
 use Zend\Db\Adapter\Driver\ResultInterface;
 use Zend\Db\ResultSet\HydratingResultSet;
 use Zend\Db\Sql\Sql;
 use Zend\Http\Client;
-use Zend\Stdlib\Hydrator\HydratorInterface;
+use Zend\Hydrator\HydratorInterface;
 
 
-class ZendDbSqlMapper implements IndexMapperInterface
+class IndexMapper implements IndexMapperInterface
 {
     protected $tableName = 'common_index';
     /**
@@ -20,12 +21,12 @@ class ZendDbSqlMapper implements IndexMapperInterface
     protected $dbAdapter;
 
     /**
-     * @var \Zend\Stdlib\Hydrator\HydratorInterface
+     * @var HydratorInterface
      */
     protected $hydrator;
 
     /**
-     * @var \SampleBlog\Model\PostInterface
+     * @var IndexInterface
      */
     protected $indexPrototype;
 
@@ -277,7 +278,7 @@ class ZendDbSqlMapper implements IndexMapperInterface
         return false;
     }
 
-    public function inactivateAll()
+    public function inActivateAll()
     {
         $sql = new Sql($this->dbAdapter);
         $update = $sql->update();
@@ -300,5 +301,36 @@ class ZendDbSqlMapper implements IndexMapperInterface
         }
         return false;
     }
+
+    public function createdBefore($timestamp)
+    {
+        // TODO: Implement createdBefore() method.
+    }
+
+    public function createdAfter($timestamp)
+    {
+        // TODO: Implement createdAfter() method.
+    }
+
+    public function createdBetween($fromTimestamp, $toTimestamp)
+    {
+        // TODO: Implement createdBetween() method.
+    }
+
+    public function updatedBefore($timestamp)
+    {
+        // TODO: Implement updatedBefore() method.
+    }
+
+    public function updatedAfter($timestamp)
+    {
+        // TODO: Implement updatedAfter() method.
+    }
+
+    public function updatedBetween($fromTimestamp, $toTimestamp)
+    {
+        // TODO: Implement updatedBetween() method.
+    }
+
 
 }

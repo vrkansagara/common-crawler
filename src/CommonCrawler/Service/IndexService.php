@@ -2,7 +2,7 @@
 
 namespace CommonCrawler\Service;
 
-use CommonCrawler\Mapper\IndexMapperInterface;
+use CommonCrawler\Mapper\Sql\IndexMapper;
 use CommonCrawler\Model\Index;
 use Zend\Http\Client;
 
@@ -16,7 +16,7 @@ class IndexService implements IndexServiceInterface
      * IndexService constructor.
      * @param $indexMapper
      */
-    public function __construct(IndexMapperInterface $indexMapper, array $configuration)
+    public function __construct(IndexMapper $indexMapper, array $configuration)
     {
         $this->indexMapper = $indexMapper;
     }
@@ -153,5 +153,36 @@ class IndexService implements IndexServiceInterface
 
         }
     }
+
+    public function createdIndexBefore($timestamp)
+    {
+        // TODO: Implement createdIndexBefore() method.
+    }
+
+    public function createdIndexAfter($timestamp)
+    {
+        // TODO: Implement createdIndexAfter() method.
+    }
+
+    public function createdIndexBetween($fromTimestamp, $toTimestamp)
+    {
+        // TODO: Implement createdIndexBetween() method.
+    }
+
+    public function updatedIndexBefore($timestamp)
+    {
+        // TODO: Implement updatedIndexBefore() method.
+    }
+
+    public function updatedIndexAfter($timestamp)
+    {
+        // TODO: Implement updatedIndexAfter() method.
+    }
+
+    public function updatedIndexBetween($fromTimestamp, $toTimestamp)
+    {
+        // TODO: Implement updatedIndexBetween() method.
+    }
+
 
 }

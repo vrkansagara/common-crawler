@@ -33,5 +33,17 @@ interface IndexServiceInterface
 
     public function inactiveAllIndex();
 
+    public function createdIndexBefore($timestamp);
+
+    public function createdIndexAfter($timestamp);
+
+    public function createdIndexBetween($fromTimestamp, $toTimestamp);
+
+    public function updatedIndexBefore($timestamp);
+
+    public function updatedIndexAfter($timestamp);
+
+    public function updatedIndexBetween($fromTimestamp, $toTimestamp);
+
     public function getPageSize(Index $index, $url, $output = 'json', $showNumPages = true);
 }

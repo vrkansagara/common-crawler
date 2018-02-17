@@ -1,38 +1,35 @@
 <?php
 
-
 namespace CommonCrawler\Mapper;
 
 
-interface IndexMapperInterface
+interface QueryMapperInterface
 {
-    public function find($id);
-
     public function findAll();
 
     public function findAllActive();
 
     public function findAllInactive();
 
-    public function insert(array $indexData);
+    public function find($id);
+
+    public function insert(array $values);
 
     public function delete($id);
 
     public function flush();
 
-    public function update($id, array $indexData);
-
-    public function import();
+    public function importSample();
 
     public function isExists($id);
 
     public function active($id);
 
-    public function inActivate($id);
+    public function inActive($id);
 
     public function activeAll();
 
-    public function inActivateAll();
+    public function inActiveAll();
 
     public function createdBefore($timestamp);
 

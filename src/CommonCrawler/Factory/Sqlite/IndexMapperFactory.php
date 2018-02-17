@@ -1,25 +1,25 @@
 <?php
 
-namespace CommonCrawler\Factory;
+namespace CommonCrawler\Factory\Sqlite;
 
-use CommonCrawler\Mapper\ZendDbSqliteMapper;
+use CommonCrawler\Mapper\Sqlite\IndexMapper;
 use CommonCrawler\Model\Index;
 use Zend\ServiceManager\FactoryInterface;
 use Zend\ServiceManager\ServiceLocatorInterface;
 use Zend\Stdlib\Hydrator\ClassMethods;
 
 
-class ZendDbSqliteMapperFactory implements FactoryInterface
+class IndexMapperFactory implements FactoryInterface
 {
     public function createService(ServiceLocatorInterface $serviceLocator)
     {
         $dbAdapter = array(
             'driver' => 'Pdo_Sqlite',
-            'database' => __DIR__ . '/../../../data/index.db'
+            'database' => __DIR__ . '/../../../../data/index.db'
         );
         $adapter = new \Zend\Db\Adapter\Adapter($dbAdapter);
 
-        return new ZendDbSqliteMapper(
+        return new IndexMapper(
             $adapter,
             new ClassMethods(),
             new Index()

@@ -1,7 +1,8 @@
 <?php
 
-namespace CommonCrawler\Mapper;
+namespace CommonCrawler\Mapper\Sqlite;
 
+use CommonCrawler\Mapper\IndexMapperInterface;
 use CommonCrawler\Model\IndexInterface;
 use Zend\Db\Adapter\AdapterInterface;
 use Zend\Db\Adapter\Driver\ResultInterface;
@@ -10,7 +11,7 @@ use Zend\Db\Sql\Sql;
 use Zend\Stdlib\Hydrator\HydratorInterface;
 
 
-class ZendDbSqliteMapper implements IndexMapperInterface
+class IndexMapper implements IndexMapperInterface
 {
     protected $tableName = 'common_index';
 
